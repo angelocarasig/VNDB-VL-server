@@ -1,5 +1,5 @@
 from functools import cache
-from flask import Flask, send_from_directory
+from flask import Flask
 from flask_caching import Cache
 from vndb_thigh_highs import VNDB
 
