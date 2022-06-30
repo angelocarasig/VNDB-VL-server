@@ -19,6 +19,7 @@ def get_user_data():
     return jsonify(data)
 
 @cache.memoize(timeout=86400)       # Assume that it resets per day
+@cross_origin()
 def get_ulist(userID):
     user = load_user_data(userID)
     return user
