@@ -2,8 +2,8 @@ from audioop import cross
 from functools import cache
 from flask import Flask, jsonify, request
 from flask_caching import Cache
-from .models import load_user_data
 from flask_cors import CORS, cross_origin
+from models import load_user_data
 
 app = Flask(__name__)
 CORS(app)
