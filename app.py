@@ -12,6 +12,11 @@ cache = Cache()
 app.config['CACHE_TYPE'] = 'simple'
 cache.init_app(app)
 
+@app.route("/")
+@cross_origin()
+def home():
+    return "<h1>test server</h1>"
+
 @app.route("/get_user_data", methods=["POST"])
 @cross_origin()
 def get_user_data():
