@@ -1,5 +1,5 @@
 from audioop import cross
-from flask import Blueprint, jsonify, request, send_from_directory
+from flask import Blueprint, jsonify, request
 from .models import load_user_data
 from api import cache
 
