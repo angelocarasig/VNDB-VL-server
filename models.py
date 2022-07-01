@@ -69,7 +69,10 @@ def load_user_data(userID, debug=True) -> dict:
 
         screens = []
         for screenshot in entry['screens']:
-            screens.append(screenshot.image)
+            screen_data = {}
+            screen_data['image'] = screenshot.image
+            screen_data['flag'] = screenshot.flagging.sexual_avg + screenshot.flagging.violence_avg
+            screens.append(screen_data)
         
         entry['screens'] = screens
 
