@@ -60,13 +60,14 @@ def load_user_data(userID, debug=True) -> dict:
         # entry.pop('screens')
         entry.pop('tags')
         entry.pop('staff')
-        entry.pop('labels')
+        # entry.pop('labels')
         # entry.pop('image_flagging')
         entry.pop('links')
         entry.pop('relations')
         entry.pop('length')
         entry.pop('anime')
-
+        
+        ### IMAGE FLAGGING
         screens = []
         for screenshot in entry['screens']:
             screen_data = {}
@@ -78,7 +79,13 @@ def load_user_data(userID, debug=True) -> dict:
 
         entry['image_flag'] = entry['image_flagging'].sexual_avg
         entry.pop('image_flagging')
+        ### IMAGE FLAGGING
 
+        user_vn_labels = []
+        for labels in entry['labels']:
+            user_vn_labels.append(labels.name)
+        
+        entry['labels'] = user_vn_labels
 
         added_date = entry['added_date'].strftime("%d/%m/%Y")
         last_mod_date = entry['last_modification_date'].strftime("%d/%m/%Y")
